@@ -75,7 +75,7 @@ body{
 
 /* clip-path: polygon(0% 6%,1% 3%,3.5% 1%,7% 0%, 30% 0%, 70% 10%, 100% 10%, 100% 96%, 99% 98%, 97% 99.2%, 94% 100%, 6% 100%, 3% 99%, 1% 97.5%, 0% 95%); */
 
-.pokedex__capa-dos-in::before{
+.pokedex__capa-dos-in::after{
     position: absolute;
     content: '';
     background-color: #481159;
@@ -84,7 +84,17 @@ body{
     clip-path: polygon(0% 6%,1% 3%,3.5% 1%,7% 0%, 30% 0%, 70% 10%, 100% 10%, 100% 96%, 99% 98%, 97% 99.2%, 94% 100%, 6% 100%, 3% 99%, 1% 97.5%, 0% 95%,2% 95%,3% 97%,4% 98%,6% 98.8%, 94% 98.8%,96.5% 98%,97.8% 97%,98% 96%,98% 11.5%,70% 11.5%, 30% 1.5%, 7% 1.5%,3.5% 2.8%, 2% 6%,2% 95%,0% 95%);
     width: 100%;
     height: 100%;
-} 
+}
+
+.pokedex__capa-dos-in::before{
+    position: absolute;
+    content: '';
+    background-color: #ca215a;
+    transform: scale(.9);
+    clip-path: polygon(0% 6%,1% 3%,3.5% 1%,7% 0%, 30% 0%, 70% 10%, 100% 10%, 100% 96%, 99% 98%, 97% 99.2%, 94% 100%, 6% 100%, 3% 99%, 1% 97.5%, 0% 95%);
+    width: 100%;
+    height: 100%;
+}
 .pokedex__capa-dos-out{
     clip-path: polygon(100% 0%, 70% 0%, 30% 10%, 0% 10%, 0% 100%, 100% 100%);
     background-color: #fe1954;
@@ -362,4 +372,68 @@ body{
     position: absolute;
     width: 80%;
     height: 20%;
+    background-color: #070849;
+    top: 17%;
+    left: 10%;
+    border-radius: 10px;
+    box-shadow: inset 0 8px 0 #0b1956;
+    overflow: hidden;
 }
+
+.pokedex__2-window::after{
+    position:absolute;
+    content: '';
+    background-color: #eeff5633;
+    width: 10%;
+    height: 200%;
+    transform: rotateZ(30deg);
+    top: -30%; 
+    left: 40%;
+    box-shadow: 60px -30px 0 #eeff5633, 15px -30px 0 #eeff5633;
+}
+
+.pokedex__2-buttons{
+    position: absolute;
+    width: 80%;
+    height: 20%;
+    border-radius: 10px;
+    top: 40%;
+    left: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    box-shadow: 6px 3px 0px #481159;
+}
+
+.button__numero{
+    position: relative;
+    min-width: 20%;
+    height: 50%;
+    background-color: #00aaf7;
+    box-shadow: inset 0px 3px 3px 1px #34d3fa,
+    inset 0 -1px 3px 1px #027fb0,
+    inset -1px 0 3px 1px #027fb0,
+    inset 1px 0 3px 1px #027fb0;
+    counter-increment: section 1;
+}
+
+.button__numero:hover{
+    box-shadow: inset 3px 3px 3px 1px #027fb0,
+    inset -2px -2px 4px #34d3fa;
+}
+
+.button__numero:first-of-type::before{
+    counter-set: section;
+}
+
+.button__numero::before{
+    position: absolute;
+    content: counter(section);
+    font-size: 2rem;
+    font-family: monospace;
+    top: 10%;
+    right: 30%;
+    color: #d5f6ff88;
+}
+
