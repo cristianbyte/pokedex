@@ -1,7 +1,7 @@
-const pokedex = document.getElementById('pokedex__toggle')
-
+const pokedexOut = document.getElementById('pokedex__toggle')
+const pokedex = document.getElementById('pokedexOpen')
 function move(){
     pokedex.classList.toggle('pokedex__open')
 }
 
-pokedex.addEventListener('click', move)
+pokedexOut.addEventListener('click', move)

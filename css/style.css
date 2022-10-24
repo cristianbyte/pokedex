@@ -10,6 +10,7 @@ body{
     display: flex;
     align-items: center;
     background-color: black;
+    font-family: monospace;
 }
 
 .pokedex{
@@ -52,8 +53,7 @@ body{
     width: 100%;
     transform-style: preserve-3d;
     transition: transform 1s ease-in-out;
-    transform-origin: right center;
-    cursor: pointer;
+    transform-origin: right;
     border-bottom-left-radius: 10px;
     
 }
@@ -99,6 +99,7 @@ body{
     clip-path: polygon(100% 0%, 70% 0%, 30% 10%, 0% 10%, 0% 100%, 100% 100%);
     background-color: #fe1954;
     border-bottom-left-radius: 10px;
+    cursor: pointer;
 }
 .pokedex__capa-dos-out::after{
     position: absolute;
@@ -437,3 +438,40 @@ body{
     color: #d5f6ff88;
 }
 
+.pokedex__2-buttons--ui{
+    position: absolute;
+    width: 80%;
+    height: 7%;
+    top: 63%;
+    left: 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pokedex__2-buttons-delete,.pokedex__2-buttons-search{
+    width: 40%;
+    height: 100%;
+    background-color: #d5f6ff;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: 6px 3px 0 #481159;
+    transition: 50ms ease;
+}
+
+.pokedex__2-buttons-delete:active,.pokedex__2-buttons-search:active{
+    transform: translateX(3px);
+    box-shadow: 3px 3px 0 #481159;
+}
+
+.pokedex__2-buttons-delete::before{content: 'Delete';}
+.pokedex__2-buttons-search::before{content: 'Search';}
+
+.pokedex__2-buttons-search::before,.pokedex__2-buttons-delete::before{
+    position: absolute;
+    top: 4px;
+    padding-left: 10px;
+    color: #0b195644;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
