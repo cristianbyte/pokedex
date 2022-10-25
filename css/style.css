@@ -475,3 +475,28 @@ body{
     font-weight: 900;
     font-size: 1.5rem;
 }
+
+/* Luces */
+
+.pokedex__2-lights{
+    background-color: #0b1956;
+    position: absolute;
+    width: 35%;
+    height: calc(10% - 10px);
+    bottom: 15%;
+    left: 10%;
+    border-radius: 10px;
+    border: 5px solid #481159;
+}
+
+.pokedex__2-lights::after{
+    background-color: inherit;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    right: -145%;
+    border-radius: 10px;
+    border: 5px solid #481159;
+    bottom: -5px;
+}
