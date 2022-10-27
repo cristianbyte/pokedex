@@ -11,6 +11,7 @@ body{
     align-items: center;
     background-color: black;
     font-family: monospace;
+    text-transform: capitalize;
 }
 
 .pokedex{
@@ -380,7 +381,8 @@ body{
     box-shadow: inset 0 8px 0 #0b1956;
     overflow: hidden;
     display: flex;
-    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .pokedex__2-window::after{
@@ -395,15 +397,27 @@ body{
     box-shadow: 60px -30px 0 #d5f6ff15, 15px -30px 0 #d5f6ff15;
 }
 
-.pokedex__2-window--down{
-    width: 100%;
-    height: 20%;
-    margin-bottom: 2%;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #00d8ff22;
+.pokedex__2-window--img{
+    width: 96px;
+}
+
+.pokedex__2-window--data,.pokedex__2-window--data2{
     color: #d5f6ff;
+    font-size: .8rem;
+}
+
+.pokedex__2-window--number{
+    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #d5f6ff;
+    width: 30%;
+    height: 110%;
+    padding-top: 30%;
+    text-align: center;
     font-size: 1rem;
+    margin-bottom: 5%;
 }
 
 .pokedex__2-buttons{
@@ -423,7 +437,6 @@ body{
 .button__numero{
     position: relative;
     width: 20%;
-    font-size: 0;
     height: 50%;
     background-color: #00aaf7;
     box-shadow: inset 0px 3px 3px 1px #34d3fa,
@@ -540,6 +553,6 @@ body{
 .imgPokemon1{
     position: sticky;
     top: 0%;
-    width: 40%;
+    width: 5.3rem;
     padding-right: 5%;
 }
