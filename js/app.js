@@ -1,9 +1,5 @@
 const pokedexOut = document.getElementById('pokedex__toggle')
 const pokedex = document.getElementById('pokedexOpen')
-function move(){
-    pokedex.classList.toggle('pokedex__open')
-}
-pokedexOut.addEventListener('click', move)
 
 const tiposTranslate = {
 steel:'acero', water: 'agua', bug: 'bicho',dragon:'dragón',
@@ -17,6 +13,11 @@ const tecladoPokedex = document.getElementsByClassName('pokedex__2-buttons')[0]
 const search = document.getElementsByClassName('pokedex__2-buttons-search')[0]
 const borrar = document.getElementsByClassName('pokedex__2-buttons-delete')[0]
 const botones = document.getElementsByClassName('pokedex__buttons')[0]
+
+const snd_1 = new Audio("../mp3/sound_1.mp3")
+const snd_2 = new Audio("../mp3/sound_2.mp3")
+const snd_3 = new Audio("../mp3/sound_3.mp3")
+
 let pokedexPrincipalImg = document.getElementsByTagName('img')
 let pokedex__window2Info = document.getElementsByClassName('pokedex__2-window--data')[0]
 let pokedex__window2Info2 = document.getElementsByClassName('pokedex__2-window--data2')[0]
@@ -24,6 +25,12 @@ let pokedex__window2InfoNumber = document.getElementsByClassName('pokedex__2-win
 let numberForSearch = '003'
 let pokeData = {}
 let pokeDataTemp = ''
+
+function move(){
+    pokedex.classList.toggle('pokedex__open')
+    snd_1.play()
+    snd_1.currentTime = 0
+}
 
 function getRandom(min, max) {
     return (Math.floor(Math.random() * (max - min) + min))
@@ -38,11 +45,15 @@ function searchEvent(){
         console.log('error')
     }
     pokedex__window2InfoNumber.innerHTML = numberForSearch
+    snd_2.play()
+    snd_2.currentTime = 0
 }
 
 function deleteNumber(){
     numberForSearch = '0'
     pokedex__window2InfoNumber.innerHTML = numberForSearch
+    snd_3.play()
+    snd_3.currentTime = 0
 }
 
 function cleanData(){
@@ -79,6 +90,8 @@ async function loadPokemon(num){
 }
 
 tecladoPokedex.addEventListener('click',(e)=>{
+    snd_1.play()
+    snd_1.currentTime = 0
     datos = {
         w_element_s:e.target.clientWidth,
         h_element_s:e.target.clientHeight,
@@ -96,10 +109,11 @@ tecladoPokedex.addEventListener('click',(e)=>{
         numberForSearch = numberForSearch.substring(1)
     }
     pokedex__window2InfoNumber.innerHTML = numberForSearch
-console.log(pokedex__window2InfoNumber );
 })
 
 function preSearch(e){
+    snd_2.play()
+    snd_2.currentTime = 0
     numberForSearch = +numberForSearch
     switch (e.target.className) {
         case 'button__left':
@@ -121,12 +135,11 @@ function preSearch(e){
         default:
             break;
     }
-    console.log(e.target.className)
-    // if(this.target && this.target.tagName === 'span')
 }
 
 loadPokemon(numberForSearch)
 pokedex__window2InfoNumber.innerHTML = numberForSearch
+pokedexOut.addEventListener('click', move)
 borrar.addEventListener('click', deleteNumber )
 search.addEventListener('click', searchEvent )
 botones.addEventListener('click', preSearch)
