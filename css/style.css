@@ -4,23 +4,35 @@
     box-sizing: border-box;
 }
 
-body{
+html{
     height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    background-color: black;
-    font-family: monospace;
-    text-transform: capitalize;
+    overflow: hidden;
 }
 
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+    background-image: url(../background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: monospace;
+    text-transform: capitalize;
+    overflow-y: hidden;
+}
+
+
+
 .pokedex{
-    margin:0 auto 0 2% ;
-    position: relative;
+    margin: 0 10rem 0 0;
     width: 20rem;
     height: 32rem;
     perspective: 70rem;
 }
+
 .pokedex__capa-uno{
     width: 100%;
     height: 100%;
@@ -551,8 +563,23 @@ body{
 
 
 .imgPokemon1{
-    position: sticky;
     top: 0%;
     width: 5.3rem;
     padding-right: 5%;
 }
+
+@media (orientation: landscape) {
+    body {
+        justify-content: center;
+    }
+}
+@media (orientation: portrait) {
+    body {
+        justify-content: left;
+    }
+    .pokedex{
+        margin: 0 0 0 5% ;
+    }
+}
+
+

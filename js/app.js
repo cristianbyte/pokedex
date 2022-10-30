@@ -25,8 +25,12 @@ let numberForSearch = '003'
 let pokeData = {}
 let pokeDataTemp = ''
 
+function getRandom(min, max) {
+    return (Math.floor(Math.random() * (max - min) + min))
+}
+
 function searchEvent(){
-    if( 0 < numberForSearch && numberForSearch < 900 ){
+    if( 0 < numberForSearch && numberForSearch < 906 ){
         loadPokemon(numberForSearch)
     }
     else{
@@ -111,7 +115,8 @@ function preSearch(e){
             searchEvent(numberForSearch-=50)
             break;   
         case 'button__scan':
-
+            numberForSearch=getRandom(1,905)
+            searchEvent(numberForSearch)
             break; 
         default:
             break;
