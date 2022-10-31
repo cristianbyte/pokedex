@@ -14,9 +14,9 @@ const search = document.getElementsByClassName('pokedex__2-buttons-search')[0]
 const borrar = document.getElementsByClassName('pokedex__2-buttons-delete')[0]
 const botones = document.getElementsByClassName('pokedex__buttons')[0]
 
-const snd_1 = new Audio("../mp3/sound_1.mp3")
-const snd_2 = new Audio("../mp3/sound_2.mp3")
-const snd_3 = new Audio("../mp3/sound_3.mp3")
+const snd_1 = new Audio("./mp3/sound_1.mp3")
+const snd_2 = new Audio("./mp3/sound_2.mp3")
+const snd_3 = new Audio("./mp3/sound_3.mp3")
 
 let pokedexPrincipalImg = document.getElementsByTagName('img')
 let pokedex__window2Info = document.getElementsByClassName('pokedex__2-window--data')[0]
